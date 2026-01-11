@@ -1,11 +1,9 @@
 # qcrypto
 
-<p style="font-size: 1.3em; color: var(--md-default-fg-color--light);">
-Post-quantum cryptography for Python — simple, Pythonic, and ready for the quantum era.
-</p>
+**Post-quantum cryptography for Python — simple, Pythonic, and ready for the quantum era.**
 
-<span class="badge badge-stable">v1.0.0</span>
-<span class="badge" style="background: #7c4dff; color: white;">Python 3.8+</span>
+![Version](https://img.shields.io/badge/version-1.0.0-green)
+![Python](https://img.shields.io/badge/python-3.8+-blue)
 
 ---
 
@@ -31,33 +29,21 @@ plaintext = decrypt(keys.private_key, ciphertext)
 
 ## Features
 
-<div class="grid cards" markdown>
+### 🔐 Hybrid Encryption
 
--   :material-shield-lock:{ .lg .middle } **Hybrid Encryption**
+Kyber KEM + HKDF + AES-256-GCM for authenticated encryption that's secure against both classical and quantum attacks.
 
-    ---
+### ✍️ Digital Signatures
 
-    Kyber KEM + HKDF + AES-256-GCM for authenticated encryption that's secure against both classical and quantum attacks.
+Support for Dilithium, Falcon, and SPHINCS+ — all NIST-selected PQC signature algorithms.
 
--   :material-signature:{ .lg .middle } **Digital Signatures**
+### 🔑 Key Management
 
-    ---
+ASCII-armored keys, passphrase protection, fingerprints, and sensible default paths like `~/.qcrypto/`.
 
-    Support for Dilithium, Falcon, and SPHINCS+ — all NIST-selected PQC signature algorithms.
+### 💻 Full CLI
 
--   :material-key:{ .lg .middle } **Key Management**
-
-    ---
-
-    ASCII-armored keys, passphrase protection, fingerprints, and sensible default paths like `~/.qcrypto/`.
-
--   :material-console:{ .lg .middle } **Full CLI**
-
-    ---
-
-    Complete command-line toolkit for key generation, encryption, decryption, signing, and verification.
-
-</div>
+Complete command-line toolkit for key generation, encryption, decryption, signing, and verification.
 
 ---
 

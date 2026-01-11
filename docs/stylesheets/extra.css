@@ -1,0 +1,46 @@
+/* Custom styles for qcrypto docs */
+
+:root {
+  --md-primary-fg-color: #7c4dff;
+  --md-accent-fg-color: #00bcd4;
+}
+
+/* Hero section styling */
+.md-typeset h1 {
+  font-weight: 700;
+}
+
+/* Code block improvements */
+.md-typeset code {
+  font-size: 0.85em;
+}
+
+/* Better table styling */
+.md-typeset table:not([class]) {
+  font-size: 0.85rem;
+}
+
+/* Admonition tweaks */
+.md-typeset .admonition {
+  font-size: 0.9rem;
+}
+
+/* Badge styling */
+.badge {
+  display: inline-block;
+  padding: 0.25em 0.6em;
+  font-size: 0.75em;
+  font-weight: 700;
+  border-radius: 0.35em;
+  margin-right: 0.5em;
+}
+
+.badge-stable {
+  background-color: #4caf50;
+  color: white;
+}
+
+.badge-beta {
+  background-color: #ff9800;
+  color: white;
+}

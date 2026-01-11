@@ -1,0 +1,87 @@
+site_name: qcrypto
+site_description: Post-quantum cryptography for Python
+site_author: Victor Postea
+site_url: https://qcrypto.vpostea.com
+
+repo_name: victorpostea/qcrypto
+repo_url: https://github.com/victorpostea/qcrypto
+
+theme:
+  name: material
+  palette:
+    - scheme: slate
+      primary: deep purple
+      accent: cyan
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+    - scheme: default
+      primary: deep purple
+      accent: cyan
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+  font:
+    text: Inter
+    code: JetBrains Mono
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+    - content.code.annotate
+  icon:
+    repo: fontawesome/brands/github
+
+plugins:
+  - search
+  - minify:
+      minify_html: true
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - admonition
+  - pymdownx.details
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/victorpostea/qcrypto
+    - icon: fontawesome/brands/python
+      link: https://pypi.org/project/qcrypto/
+
+extra_css:
+  - stylesheets/extra.css
+
+nav:
+  - Home: index.md
+  - Installation: installation.md
+  - Quickstart: guides/quickstart.md
+  - CLI Reference: cli.md
+  - Guides:
+    - Hybrid Encryption: guides/encryption.md
+    - Digital Signatures: guides/signatures.md
+    - File Encryption: guides/files.md
+    - ASCII Armor: guides/armor.md
+  - API Reference:
+    - KEM (Key Encapsulation): api/kem.md
+    - Signatures: api/signatures.md
+    - Hybrid Encryption: api/hybrid.md
+  - Changelog: changelog.md

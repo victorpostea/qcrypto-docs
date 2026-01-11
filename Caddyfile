@@ -1,0 +1,24 @@
+# Caddyfile for automatic HTTPS
+
+qcrypto.vpostea.com {
+    root * /srv/docs
+    file_server
+    encode gzip
+
+    # MkDocs static site routing
+    try_files {path} {path}/ {path}.html {path}/index.html /index.html
+
+    # Security headers
+    header {
+        X-Frame-Options "SAMEORIGIN"
+        X-Content-Type-Options "nosniff"
+        X-XSS-Protection "1; mode=block"
+        Referrer-Policy "strict-origin-when-cross-origin"
+    }
+
+    # Cache static assets
+    @static {
+        path *.css *.js *.png *.jpg *.jpeg *.gif *.ico *.svg *.woff *.woff2
+    }
+    header @static Cache-Control "public, max-age=31536000, immutable"
+}

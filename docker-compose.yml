@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  docs:
+    image: python:3.11-slim
+    working_dir: /app
+    volumes:
+      - .:/app
+      - site_data:/app/site
+    command: >
+      sh -c "pip install --quiet -r requirements.txt && mkdocs build"
+    
+  caddy:
+    image: caddy:2-alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - site_data:/srv/docs:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      docs:
+        condition: service_completed_successfully
+    restart: always
+
+volumes:
+  site_data:
+  caddy_data:
+  caddy_config:

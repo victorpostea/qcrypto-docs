@@ -51,9 +51,7 @@ pip install -e .
 
 ### macOS
 
-Usually works out of the box on Apple Silicon and Intel Macs.
-
-If you encounter errors related to `liboqs`, install it with Homebrew:
+Requires `liboqs` to be installed:
 
 ```bash
 brew install liboqs

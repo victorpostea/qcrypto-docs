@@ -44,16 +44,15 @@ Works out of the box on Apple Silicon and Intel Macs.
 
 ### Linux
 
-Requires a C compiler for liboqs. On Ubuntu/Debian:
+Works out of the box — `liboqs-python` ships with prebuilt binaries.
 
 ```bash
-sudo apt-get install build-essential cmake
 pip install qcrypto
 ```
 
 ### Windows
 
-Pre-built wheels are available. If installation fails, install Visual Studio Build Tools first.
+Not currently supported. Use WSL2 (Windows Subsystem for Linux) instead.
 
 ## Available Algorithms
 

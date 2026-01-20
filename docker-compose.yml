@@ -9,23 +9,25 @@ services:
       - site_data:/app/site
     command: >
       sh -c "pip install --quiet -r requirements.txt && mkdocs build"
-    
-  caddy:
+
+  docs-web:
     image: caddy:2-alpine
-    ports:
-      - "80:80"
-      - "443:443"
+    container_name: qcrypto-docs
     volumes:
-      - ./Caddyfile:/etc/caddy/Caddyfile:ro
-      - site_data:/srv/docs:ro
-      - caddy_data:/data
-      - caddy_config:/config
+      - site_data:/srv:ro
+      - ./Caddyfile.internal:/etc/caddy/Caddyfile:ro
     depends_on:
       docs:
         condition: service_completed_successfully
-    restart: always
+    restart: unless-stopped
+    networks:
+      - web
+    expose:
+      - "80"
 
 volumes:
   site_data:
-  caddy_data:
-  caddy_config:
+
+networks:
+  web:
+    external: true

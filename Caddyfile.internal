@@ -1,7 +1,7 @@
 # Caddyfile for automatic HTTPS
 
-qcrypto.vpostea.com {
-    root * /srv/docs
+:80 {
+    root * /srv
     file_server
     encode gzip
 
